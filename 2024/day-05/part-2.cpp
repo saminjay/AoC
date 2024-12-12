@@ -66,7 +66,7 @@ int main() {
             if (at != i) {
                 arr.erase(arr.begin() + i);
                 arr.insert(arr.begin() + at, num);
-                i++;
+                ++i;
             }
         }
         count += arr[(arr.size() - 1) / 2];
