@@ -48,7 +48,8 @@ int main() {
             i = delim + 1;
         } while (delim != std::string::npos);
 
-        if (!in_order) out_of_order.push_back(update);
+        if (!in_order)
+            out_of_order.push_back(update);
         count += in_order * update[(update.size() - 1) / 2];
     }
     std::cout << count << std::endl;

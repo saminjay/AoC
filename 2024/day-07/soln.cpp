@@ -31,7 +31,8 @@ std::vector<std::vector<long long>> read_file(std::string file_name) {
     return arr;
 }
 
-bool is_valid(std::vector<long long> &nums, long long op = 0, long long i = 1, long long sum = 0) {
+bool is_valid(std::vector<long long> &nums, long long op = 0, long long i = 1,
+              long long sum = 0) {
     long long res = nums[0];
     long long len = nums.size();
 
@@ -55,7 +56,8 @@ void part1(std::vector<std::vector<long long>> arr) {
     std::cout << sol << std::endl;
 }
 
-bool is_valid_2(std::vector<long long> &nums, long long op = 0, long long i = 1, long long sum = 0) {
+bool is_valid_2(std::vector<long long> &nums, long long op = 0, long long i = 1,
+                long long sum = 0) {
     long long res = nums[0];
     long long len = nums.size();
 
@@ -70,7 +72,8 @@ bool is_valid_2(std::vector<long long> &nums, long long op = 0, long long i = 1,
     if (i == len - 1) {
         return res == sum;
     }
-    return is_valid_2(nums, 0, i + 1, sum) || is_valid_2(nums, 1, i + 1, sum) || is_valid_2(nums, 2, i + 1, sum);
+    return is_valid_2(nums, 0, i + 1, sum) || is_valid_2(nums, 1, i + 1, sum) ||
+           is_valid_2(nums, 2, i + 1, sum);
 }
 
 void part2(std::vector<std::vector<long long>> arr) {

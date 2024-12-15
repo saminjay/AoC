@@ -13,15 +13,15 @@ int get_mul(std::string::iterator begin, std::string::iterator end) {
     for (auto it = match_begin; it != match_end; ++it) {
         auto match = *it;
         switch (match.str()[2]) {
-            case 'n':
-                enabled = false;
-                break;
-            case '(':
-                enabled = true;
-                break;
-            case 'l':
-                sum += enabled * (std::stoi(match[2]) * std::stoi(match[3]));
-                break;
+        case 'n':
+            enabled = false;
+            break;
+        case '(':
+            enabled = true;
+            break;
+        case 'l':
+            sum += enabled * (std::stoi(match[2]) * std::stoi(match[3]));
+            break;
         }
     }
     return sum;

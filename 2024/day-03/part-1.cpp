@@ -17,7 +17,8 @@ int main() {
 
     std::regex mul("mul\\((\\d{1,3}),(\\d{1,3})\\)");
     int sum = 0;
-    auto match_begin = std::sregex_iterator(inputString.begin(), inputString.end(), mul);
+    auto match_begin =
+        std::sregex_iterator(inputString.begin(), inputString.end(), mul);
     auto match_end = std::sregex_iterator();
     for (auto it = match_begin; it != match_end; ++it) {
         auto match = *it;

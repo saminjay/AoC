@@ -47,7 +47,8 @@ int main() {
                     break;
                 }
             }
-            if (!in_order) break;
+            if (!in_order)
+                break;
         }
         count += in_order * update[(update.size() - 1) / 2];
     }

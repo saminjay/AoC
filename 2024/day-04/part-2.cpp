@@ -3,21 +3,24 @@
 #include <string>
 #include <vector>
 
-int search_xmas(std::vector<std::string> word_search, int const i, int const j) {
+int search_xmas(std::vector<std::string> word_search, int const i,
+                int const j) {
     int count = 0;
     int rows = word_search.size();
     int cols = word_search[0].size();
 
-    count += (word_search[i + 1][j - 1] == 'M' && word_search[i - 1][j + 1] == 'S') &&
-        (
-            (word_search[i + 1][j + 1] == 'M' && word_search[i - 1][j - 1] == 'S') ||
-            (word_search[i + 1][j + 1] == 'S' && word_search[i - 1][j - 1] == 'M')
-        );
-    count += (word_search[i + 1][j - 1] == 'S' && word_search[i - 1][j + 1] == 'M') &&
-        (
-            (word_search[i + 1][j + 1] == 'M' && word_search[i - 1][j - 1] == 'S') ||
-            (word_search[i + 1][j + 1] == 'S' && word_search[i - 1][j - 1] == 'M')
-        );
+    count += (word_search[i + 1][j - 1] == 'M' &&
+              word_search[i - 1][j + 1] == 'S') &&
+             ((word_search[i + 1][j + 1] == 'M' &&
+               word_search[i - 1][j - 1] == 'S') ||
+              (word_search[i + 1][j + 1] == 'S' &&
+               word_search[i - 1][j - 1] == 'M'));
+    count += (word_search[i + 1][j - 1] == 'S' &&
+              word_search[i - 1][j + 1] == 'M') &&
+             ((word_search[i + 1][j + 1] == 'M' &&
+               word_search[i - 1][j - 1] == 'S') ||
+              (word_search[i + 1][j + 1] == 'S' &&
+               word_search[i - 1][j - 1] == 'M'));
     return count;
 }
 

@@ -6,7 +6,8 @@
 #include <vector>
 
 void printmap(const std::vector<std::string> &map) {
-    for (const auto &s : map) std::cout << s << std::endl;
+    for (const auto &s : map)
+        std::cout << s << std::endl;
 }
 
 std::vector<std::string> read_file(std::string file_name) {
@@ -35,18 +36,18 @@ void move(std::vector<std::string> &map, int &i, int &j, int &dir) {
     int n_i = i, n_j = j;
 
     switch (dir) {
-        case 0: // Up
-            --n_i;
-            break;
-        case 1: // Left
-            ++n_j;
-            break;
-        case 2: // Down
-            ++n_i;
-            break;
-        case 3: // Right
-            --n_j;
-            break;
+    case 0: // Up
+        --n_i;
+        break;
+    case 1: // Left
+        ++n_j;
+        break;
+    case 2: // Down
+        ++n_i;
+        break;
+    case 3: // Right
+        --n_j;
+        break;
     }
 
     if (inbound(map, n_i, n_j) && map[n_i][n_j] == '#') {
@@ -70,7 +71,8 @@ void part1(std::vector<std::string> map) {
                 break;
             }
         }
-        if (brfl) break;
+        if (brfl)
+            break;
     }
 
     int dir = 0;
@@ -83,22 +85,25 @@ void part1(std::vector<std::string> map) {
     std::cout << sol << std::endl;
 }
 
-bool put_obstacle(std::vector<std::string> &map, int i, int j, int dir, const int &idx, const int &jdx, std::set<std::tuple<int, int>> &obstacles) {
+bool put_obstacle(std::vector<std::string> &map, int i, int j, int dir,
+                  const int &idx, const int &jdx,
+                  std::set<std::tuple<int, int>> &obstacles) {
     switch (dir) {
-        case 0: // Up
-            --i;
-            break;
-        case 1: // Left
-            ++j;
-            break;
-        case 2: // Down
-            ++i;
-            break;
-        case 3: // Right
-            --j;
-            break;
+    case 0: // Up
+        --i;
+        break;
+    case 1: // Left
+        ++j;
+        break;
+    case 2: // Down
+        ++i;
+        break;
+    case 3: // Right
+        --j;
+        break;
     }
-    if (!inbound(map, i, j) || (i == idx && j == jdx) || map[i][j] == '#' || obstacles.count(std::make_tuple(i, j))) {
+    if (!inbound(map, i, j) || (i == idx && j == jdx) || map[i][j] == '#' ||
+        obstacles.count(std::make_tuple(i, j))) {
         return false;
     }
     map[i][j] = '#';
@@ -106,8 +111,12 @@ bool put_obstacle(std::vector<std::string> &map, int i, int j, int dir, const in
     return true;
 }
 
-int check_loop(std::vector<std::string> map, int i, int j, int dir, const int &idx, const int &jdx, const std::set<std::tuple<int, int, int>> &map_visits, std::set<std::tuple<int, int>> &obstacles) {
-    if (!put_obstacle(map, i, j, dir, idx, jdx, obstacles)) return 0;
+int check_loop(std::vector<std::string> map, int i, int j, int dir,
+               const int &idx, const int &jdx,
+               const std::set<std::tuple<int, int, int>> &map_visits,
+               std::set<std::tuple<int, int>> &obstacles) {
+    if (!put_obstacle(map, i, j, dir, idx, jdx, obstacles))
+        return 0;
 
     std::set<std::tuple<int, int, int>> visited = map_visits;
     dir = (dir + 1) % 4;
@@ -137,7 +146,8 @@ void part2(std::vector<std::string> map) {
                 break;
             }
         }
-        if (brfl) break;
+        if (brfl)
+            break;
     }
 
     const int idx = i, jdx = j;
