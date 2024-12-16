@@ -28,7 +28,7 @@ int get_mul(std::string::iterator begin, std::string::iterator end) {
 }
 
 int main() {
-    std::ifstream inputFile("input.txt");
+    std::ifstream inputFile("../input.txt");
     if (!inputFile.is_open()) {
         std::cerr << "Failed to open input.txt";
         return 1;

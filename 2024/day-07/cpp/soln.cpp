@@ -85,7 +85,7 @@ void part2(std::vector<std::vector<long long>> arr) {
 }
 
 int main() {
-    auto arr = read_file("input.txt");
+    auto arr = read_file("../input.txt");
     part1(arr);
     part2(arr);
 

@@ -4,7 +4,7 @@
 #include <vector>
 
 int main() {
-    std::ifstream inputFile("input.txt");
+    std::ifstream inputFile("../input.txt");
     if (!inputFile.is_open()) {
         std::cerr << "Failed to open input.txt";
         return 1;

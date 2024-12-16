@@ -25,7 +25,7 @@ int search_xmas(std::vector<std::string> word_search, int const i,
 }
 
 int main() {
-    std::ifstream inputFile("input.txt");
+    std::ifstream inputFile("../input.txt");
     if (!inputFile.is_open()) {
         std::cerr << "Failed to open input.txt";
         return 1;

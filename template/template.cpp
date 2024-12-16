@@ -3,6 +3,11 @@
 #include <string>
 #include <vector>
 
+void printmap(std::vector<std::string> &arr) {
+    for (auto s : arr)
+        std::cout << s << "\n";
+}
+
 std::vector<std::string> read_file(std::string file_name) {
     std::ifstream input_file(file_name);
     if (!input_file.is_open()) {
@@ -30,7 +35,7 @@ void part2(std::vector<std::string> arr) {
 }
 
 int main() {
-    auto arr = read_file("input.txt");
+    auto arr = read_file("../input.txt");
     part1(arr);
     part2(arr);
 

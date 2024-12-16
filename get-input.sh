@@ -13,6 +13,6 @@ input=$(curl "https://adventofcode.com/$1/day/$2/input" \
     -H "Cookie: session=$SESSION_ID")
 
 dir=$(printf "%d/day-%02d" "$1" "$2")
-mkdir -p "$dir"
+mkdir -p "$dir/cpp"
 echo "$input" >"$dir/input.txt"
-cp "template/template.cpp" "$dir/soln.cpp"
+cp "template/template.cpp" "$dir/cpp/soln.cpp"
